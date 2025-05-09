@@ -144,6 +144,10 @@
             min-height: 60vh;
             place-content: center;
         }
+
+       .hero h1{
+            font-size: 32px;
+        }
         .btn {
             display: inline-block;
             padding: 10px 20px;
