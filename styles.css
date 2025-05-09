@@ -288,6 +288,10 @@
         place-content: center;      
       }
 
+       #why-choose-us h1{
+        color: white;
+      }
+
       #contact{
         border-image:linear-gradient(
             hsl(195, 89%, 4%),
@@ -324,6 +328,10 @@
         text-decoration: underline;
         color: white;
 
+      }
+
+       #contact h1{
+        color: white;
       }
 
       footer{
