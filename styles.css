@@ -258,11 +258,16 @@
         display: flex;
         padding-bottom: 20px;
         justify-content: center;
+        
       }
 
       #why-choose-us li{
         color: white;
        
+      }
+
+      #why-choose-us h1{
+        color: white;
       }
 
       #services h2{
@@ -286,10 +291,6 @@
                 fill 1;
         min-height: 60vh;  
         place-content: center;      
-      }
-
-       #why-choose-us h1{
-        color: white;
       }
 
       #contact{
@@ -330,7 +331,7 @@
 
       }
 
-       #contact h1{
+      #contact h1{
         color: white;
       }
 
