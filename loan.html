@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply for a Loan | Peneh</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar (copied from main page) -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="/images/Picsart_25-06-23_14-05-27-291.png" alt="Peneh Logo">
+      </a>
+      <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-list">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
+        <li><a href="index.html#loan">Loans</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Loan Application Section -->
+  <section class="section loan" style="padding-top: 120px;">
+    <div class="container">
+      <h2 class="section-title">Loan Services</h2>
+      <p class="section-subtitle">Accessible and flexible loan options designed to support your financial goals</p>
+
+      <div class="loan-content">
+        <p>
+          At Peneh, we understand that financial flexibility is key. Our Collateral Based loan offerings are designed for individuals and small businesses who need quick, trustworthy, and straightforward access to credit.
+          Whether it’s to expand your transport business, cover unexpected expenses, or take a step toward a goal—our loan services have you covered.
+        </p>
+
+
+        <h3 style="margin-top: 3rem;">Apply for a Loan</h3>
+        <form id="loanApplicationForm" class="contact-form" style="margin-top: 2rem;">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Your Full Name" required>
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Your Phone Number" required>
+          </div>
+          <div class="form-group">
+            <label for="emailAddress">Email Address (optional)</label>
+            <input type="email" id="emailAddress" name="emailAddress" placeholder="example@example.com">
+          </div>
+          <div class="form-group">
+            <label for="amount">Requested Loan Amount</label>
+            <input type="number" id="amount" name="amount" placeholder="e.g., 10000" required>
+          </div>
+          <div class="form-group">
+             <label for="collateral">Collateral Offered</label>
+             <input type="text" id="collateral" name="collateral" placeholder="e.g. Laptop, Phone or other" required>
+</div>
+          <div class="form-group">
+            <label for="duration">Repayment Period</label>
+            <select id="duration" name="duration" required>
+              <option value="">Select Duration</option>
+              <option value="1 week">1 Week</option>
+              <option value="2 weeks">2 Weeks/option>
+              <option value="6 months">6 Months</option>
+              <option value="12 months">12 Months</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="reason">Purpose of Loan</label>
+            <textarea id="reason" name="reason" rows="4" placeholder="Briefly explain why you need this loan..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Loan Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- JS for menu toggle + form alert -->
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu')?.addEventListener('click', function () {
+      this.classList.toggle('active');
+      document.querySelector('.nav-list').classList.toggle('active');
+    });
+
+    // Form Submission
+    document.getElementById('loanApplicationForm')?.addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Your loan application has been received. Our team will get in touch with you soon!');
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
