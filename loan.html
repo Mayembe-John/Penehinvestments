@@ -13,9 +13,12 @@
   <!-- Navigation Bar (copied from main page) -->
   <nav>
     <div class="nav-container">
-      <a href="index.html" class="logo">
-        <img src="images/Picsart_25-06-23_14-05-27-291.png" alt="Peneh Logo">
-      </a>
+      <div class="logo-text-wrap" style="display: flex; align-items: center; gap: 1rem;">
+    <a href="index.html" class="logo">
+      <img src="/images/Picsart_25-06-23_14-05-27-291.png" alt="Peneh Logo">
+    </a>
+    <h1 style="font-size: 1.5rem; color: var(--secondary); font-weight: 600;">Peneh Investments Limited</h1>
+  </div>
       <div class="menu-toggle" id="mobile-menu">
         <span></span>
         <span></span>
@@ -44,8 +47,8 @@
 
 
         <h3 style="margin-top: 3rem;">Apply for a Loan</h3>
-        <form id="loanApplicationForm" class="contact-form" style="margin-top: 2rem;">
-          <div class="form-group">
+        <form id="loanApplicationForm" class="contact-form"           style="margin-top: 2rem;">
+          <div class="form-group"> 
             <label for="fullName">Full Name</label>
             <input type="text" id="fullName" name="fullName" placeholder="Your Full Name" required>
           </div>
@@ -85,20 +88,89 @@
     </div>
   </section>
 
+  <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Picsart_25-06-23_14-05-27-291.png" alt="Peneh Logo">
+                    <p>Your Trusted Partner in Transport Logistics</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#why-choose-us">Why Choose Us</a></li>
+                        <li><a href="#loan">Loans</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> penehinvestments@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +260 971 610 805</li>
+                        <li><i class="fas fa-phone"></i> +260 766 628 798</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Peneh Credit Investment & Services Limited. All Rights Reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/260972324035"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
   <!-- JS for menu toggle + form alert -->
   <script>
-    // Mobile menu toggle
-    document.getElementById('mobile-menu')?.addEventListener('click', function () {
-      this.classList.toggle('active');
-      document.querySelector('.nav-list').classList.toggle('active');
-    });
+  document.getElementById('loanApplicationForm')?.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-    // Form Submission
-    document.getElementById('loanApplicationForm')?.addEventListener('submit', function (e) {
-      e.preventDefault();
-      alert('Your loan application has been received. Our team will get in touch with you soon!');
-      this.reset();
-    });
+    // Gather form values
+    const name = document.getElementById('fullName').value.trim();
+    const phone = document.getElementById('phoneNumber').value.trim();
+    const email = document.getElementById('emailAddress').value.trim();
+    const amount = document.getElementById('amount').value.trim();
+    const duration = document.getElementById('duration').value;
+    const reason = document.getElementById('reason').value.trim();
+    const collateral = document.getElementById('collateral').value.trim();
+
+    if (!name || !phone || !amount || !duration || !reason || !collateral) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    // Format the WhatsApp message
+   let message = "🔔 NEW LOAN APPLICATION FROM PENEH WEBSITE 🔔. ";
+message += `👤 Full Name: ${name}, `;
+message += `📞 Phone: ${phone}, `;
+if (email) message += `📧 Email: ${email}, `;
+message += `💰 Requested Amount: K${amount}, `;
+message += `🕒 Repayment Period: ${duration}, `;
+message += `📝 Purpose: ${reason}, `;
+message += `🔐 Collateral: ${collateral}. `;
+message += `📩 Please respond ASAP.`;
+
+    // WhatsApp number
+    const whatsappNumber = "260972324035";
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    // Open WhatsApp
+    window.open(url, '_blank');
+
+    // Optional alert or reset
+    alert("A WhatsApp message will now open. Please press 'Send' to complete your application.");
+    this.reset();
+  });
+</script>
+
   </script>
 
 </body>
